@@ -2,7 +2,6 @@ import { graphQlClient } from 'core/api';
 import { gql } from 'graphql-request';
 import {
   RickAndMortyApiModel,
-  getNewRickAndMortyApiModel,
   RickAndMorthyCharactersResponse
 } from './rick-and-morty.api.model';
 
@@ -23,11 +22,7 @@ export const getRickAndMorthyCharacters = async (
       }
     }
   `;
-  try {
-    const  response  = await graphQlClient.request<RickAndMorthyCharactersResponse>(query);
-    return response.data;
-  } catch {
-    return getNewRickAndMortyApiModel();
-  }
+  const response = await graphQlClient.request<RickAndMorthyCharactersResponse>(query);
+  return response.data;
 };
 

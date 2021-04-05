@@ -23,12 +23,13 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       backgroundColor: 'oldlace',
-      padding: '10px',
-      width: '30%',
-      height: '95%',
+      width: '100%',
+      height: '100%',
     },
     media: {
-      padding: '40%',
+      padding: '45%',
+      height: '2em',
+      width: '38em',
     },
     icon: {
       color: 'secondary',
@@ -40,7 +41,7 @@ interface Props {
   rickAndMortyCharacter: RickAndMortyDetailVm;
 }
 
-export const RickAndMortyDetailComponent: React.FC<Props> = props => {
+export const RickAndMortyDetailComponent: React.FC<Props> = (props) => {
   const classes = useStyles();
   const { rickAndMortyCharacter } = props;
   const history = useHistory();

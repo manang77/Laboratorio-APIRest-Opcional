@@ -13,7 +13,7 @@ const useStyles = makeStyles(() =>
   createStyles({
     root: {
       backgroundColor: 'oldlace',
-      width: '75%',
+      width: 'auto',
       minHeight: '6em',
     },
     icon: {
@@ -63,7 +63,7 @@ export const EpisodeDetailComponent: React.FC<Props> = (props) => {
                   </div>
                 </Link>
                 <div className={episodeDetailClasses.characterName}>
-                  <p>{character.name.slice(0,21)}</p>
+                  <p>{character.name}</p>
                 </div>
               </div>
             ))}

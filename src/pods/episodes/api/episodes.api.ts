@@ -1,7 +1,7 @@
 import { graphQlClient } from 'core/api';
 import { gql } from 'graphql-request';
 import {
-  EpisodesApiModel, EpisodesApiModelResponse, getNewEpisodesApiModel
+  EpisodesApiModel, EpisodesApiModelResponse
 } from './episodes.api.model';
 
 export const getEpisodes = async (
@@ -21,11 +21,6 @@ export const getEpisodes = async (
       }
     }
   `;
-
-  try {
-    const response = await graphQlClient.request<EpisodesApiModelResponse>(query);
-    return response.data;
-  } catch {
-    return getNewEpisodesApiModel();
-  }
+  const response = await graphQlClient.request<EpisodesApiModelResponse>(query);
+  return response.data;
 };

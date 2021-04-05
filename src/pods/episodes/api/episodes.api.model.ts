@@ -18,14 +18,3 @@ export interface EpisodesApiModel {
 export interface EpisodesApiModelResponse {
   data: EpisodesApiModel;
 }
-
-export const getNewEpisodesApiModel = () => {
-  const info: Info = {
-    count: 0,
-    pages: 0,
-  };
-  return {
-    info: info,
-    results: [],
-  };
-};
